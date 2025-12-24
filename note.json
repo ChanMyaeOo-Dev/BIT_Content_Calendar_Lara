@@ -1,0 +1,148 @@
+{
+    "contents": [
+        {
+            "date": "15/Dec/2025",
+            "title": "CV မှာ 'Hardworking' လို့ လျှောက်ရေးနေတုန်းလား?",
+            "content_format": "Job Hunt / Resume Fix",
+            "core_concept": "Recruiters spend 6 seconds on a CV. Replace generic adjectives with action verbs and specific technologies. (Hardworking အစား ဘယ် Project မှာ ဘယ်လိုပြဿနာကို ရှင်းခဲ့လဲဆိုတာ အစားထိုးရေးသားနည်း)"
+        },
+        {
+            "date": "17/Dec/2025",
+            "title": "Video ကြည့်ပြီး လိုက်ရေးရုံနဲ့ Developer ဖြစ်မလာပါဘူး",
+            "content_format": "Learning Strategy",
+            "core_concept": "The difference between 'Passive Learning' (watching) and 'Active Learning' (building). (Tutorial Hell မှ ရုန်းထွက်ပြီး ကိုယ်တိုင် Documentation ဖတ်ကာ ရေးသားခြင်း၏ အရေးပါပုံ)"
+        },
+        {
+            "date": "19/Dec/2025",
+            "title": "Deadline မမီတော့ရင် ဘာလုပ်မလဲ? (Professional Ethic)",
+            "content_format": "Workplace Ethic",
+            "core_concept": "Communication is key. Don't hide until the last minute. Inform early and negotiate scope. (အလုပ်မပြီးပါက ကြောက်ပြီး ပုန်းမနေဘဲ ကြိုတင်အသိပေးညှိနှိုင်းခြင်းသည် Professional ဆန်သည်)"
+        },
+        {
+            "date": "22/Dec/2025",
+            "title": "Portfolio မှာ Calculator ပါရင် အလုပ်မလျှောက်ပါနဲ့တော့",
+            "content_format": "Portfolio Strategy",
+            "core_concept": "Recruiters want to see unique projects. Build something that solves a real problem, not generic tutorial assignments. (ထူးခြားမှုမရှိသော Project များအစား ကိုယ်ပိုင်အကြံဉာဏ်ဖြင့် ရေးသားထားသော Project များကိုသာ ပြသသင့်ပုံ)"
+        },
+        {
+            "date": "24/Dec/2025",
+            "title": "အင်္ဂလိပ်စာ မရရင် Developer လုပ်လို့ရလား?",
+            "content_format": "Skill / Reality Check",
+            "core_concept": "You don't need to be Shakespeare, but you must read Documentation and StackOverflow. (စကားပြော မကျွမ်းကျင်ရင်နေပါ၊ စာဖတ်ပြီး နားလည်ဖို့ကတော့ မရှိမဖြစ် လိုအပ်ပုံ)"
+        },
+        {
+            "date": "26/Dec/2025",
+            "title": "Ego ကို ဘေးဖယ်ထားပါ (Code Review Mindset)",
+            "content_format": "Soft Skills / Mindset",
+            "core_concept": "You are not your code. When seniors critique your PR, they are fixing the product, not attacking you. (ဝေဖန်မှုကို ပုဂ္ဂိုလ်ရေးတိုက်ခိုက်မှုဟု မမြင်ဘဲ တိုးတက်လမ်းအဖြစ် လက်ခံနည်း)"
+        },
+        {
+            "date": "29/Dec/2025",
+            "title": "LinkedIn ကို Facebook လို မသုံးပါနဲ့",
+            "content_format": "Job Hunt / Networking",
+            "core_concept": "Don't just add friends. Engage with comments, share your learning journey, and connect with HRs professionally. (အလုပ်အကိုင် အခွင့်အလမ်းရအောင် Professional ဆန်ဆန် Network တည်ဆောက်နည်း)"
+        },
+        {
+            "date": "31/Dec/2025",
+            "title": "Error တက်ရင် Senior ကို ချက်ချင်း မမေးပါနဲ့ဦး",
+            "content_format": "Problem Solving / Etiquette",
+            "core_concept": "The 15-minute rule. Try to Google, Log, and Debug yourself first. Asking questions with context gets better answers. (မမေးခင် ကိုယ်တိုင် အရင်ကြိုးစားသင့်ပြီး၊ မေးသည့်အခါတွင်လည်း ထိရောက်စွာ မေးမြန်းနည်း)"
+        },
+        {
+            "date": "02/Jan/2026",
+            "title": "Burnout မဖြစ်အောင် ဘယ်လိုနေမလဲ?",
+            "content_format": "Health / Lifestyle",
+            "core_concept": "Coding 12 hours a day is not a flex. Rest is part of the work. (ကျန်းမာရေးမကောင်းလျှင် Code ကောင်း ထွက်မလာနိုင်၊ နားချိန်နှင့် အလုပ်ချိန် မျှတအောင် နေထိုင်နည်း)"
+        },
+        {
+            "date": "05/Jan/2026",
+            "title": "Interview မှာ 'မသိပါဘူး' လို့ ဖြေရဲပါစေ",
+            "content_format": "Interview Strategy",
+            "core_concept": "Honesty > Guessing. Say 'I don't know, but here is how I would find out.' (လိမ်ညာဖြေဆိုခြင်းထက် ရိုးသားစွာဝန်ခံပြီး သင်ယူလိုစိတ်ကို ပြသခြင်းက အမှတ်ပိုရနိုင်ပုံ)"
+        },
+        {
+            "date": "07/Jan/2026",
+            "title": "Deep Work: ၃ နာရီ လုပ်တာက ၁၀ နာရီ လုပ်တာထက် ပိုထိရောက်တယ်",
+            "content_format": "Productivity",
+            "core_concept": "Focus management. Removing distractions (Phone/Noti) allows for complex problem solving. (အာရုံစူးစိုက်မှု ပြတ်တောက်ခြင်းမရှိဘဲ အလုပ်လုပ်ခြင်း၏ ရလဒ်ကောင်းများ)"
+        },
+        {
+            "date": "09/Jan/2026",
+            "title": "Team Player ဆိုတာ ဘာလဲ? (Code ရေးတော်ရုံနဲ့ မလုံလောက်ပါ)",
+            "content_format": "Workplace Culture",
+            "core_concept": "Helping others, writing documentation, and being easy to work with. (အဖွဲ့အစည်းနှင့် အလုပ်လုပ်ရာတွင် ကူညီတတ်သူ၊ ဆက်ဆံရေးပြေပြစ်သူ ဖြစ်ရန် လိုအပ်ပုံ)"
+        },
+        {
+            "date": "12/Jan/2026",
+            "title": "Cover Letter ရေးဖို့ လိုသေးလား?",
+            "content_format": "Job Hunt",
+            "core_concept": "Yes, if you want to stand out. Customize it for the company, don't copy-paste. (Company အကြောင်း လေ့လာထားကြောင်း ပြသနိုင်သည့် နေရာဖြစ်သဖြင့် ထိထိမိမိ ရေးသားသင့်ပုံ)"
+        },
+        {
+            "date": "14/Jan/2026",
+            "title": "Legacy Code တွေကို မုန်းမနေပါနဲ့",
+            "content_format": "Industry Reality",
+            "core_concept": "You will rarely write code from scratch. Reading and respecting old code is a superpower. (သူများရေးခဲ့သော Code အဟောင်းများကို စိတ်ရှည်လက်ရှည် ဖတ်ရှုပြင်ဆင်တတ်ရန် လိုအပ်ပုံ)"
+        },
+        {
+            "date": "16/Jan/2026",
+            "title": "Imposter Syndrome (ငါ တကယ်မတော်ပါလား?)",
+            "content_format": "Mindset / Mental Health",
+            "core_concept": "Everyone feels like a fake sometimes, even Seniors. Focus on growth, not perfection. (မိမိကိုယ်ကို ယုံကြည်မှုအားနည်းသည့် စိတ်ခံစားမှုကို ကျော်လွှားနည်း)"
+        },
+        {
+            "date": "19/Jan/2026",
+            "title": "Salary Negotiation: Junior တွေ လစာညှိလို့ရလား?",
+            "content_format": "Career Advice",
+            "core_concept": "Know the market rate. Focus on value, not personal needs. (လုပ်ငန်းခွင် စဝင်မည့်သူများအနေဖြင့် လစာညှိနှိုင်းရာတွင် သိထားသင့်သည့် အခြေခံများ)"
+        },
+        {
+            "date": "21/Jan/2026",
+            "title": "Technology အသစ်တိုင်း လိုက်သင်စရာမလိုပါ",
+            "content_format": "Learning Strategy",
+            "core_concept": "Shiny Object Syndrome. Master the fundamentals first, frameworks change every year. (ခေတ်စားနေသော နည်းပညာတိုင်းကို လိုက်မလေ့လာဘဲ အခြေခံခိုင်မာအောင် လုပ်ဆောင်သင့်ပုံ)"
+        },
+        {
+            "date": "23/Jan/2026",
+            "title": "Commit Message တွေကို 'Update code' လို့ မရေးပါနဲ့",
+            "content_format": "Best Practices / Git",
+            "core_concept": "Your git history tells a story. Use conventional commits like 'fix: login bug' or 'feat: add user profile'. (အဖွဲ့လိုက်လုပ်ဆောင်ရာတွင် တိကျရှင်းလင်းသော Commit Message များ၏ အရေးပါပုံ)"
+        },
+        {
+            "date": "26/Jan/2026",
+            "title": "Company ရွေးတဲ့အခါ လစာတစ်ခုတည်း မကြည့်ပါနဲ့",
+            "content_format": "Job Hunt / Career",
+            "core_concept": "Mentorship, Culture, and Learning opportunities are worth more than cash for Juniors. (လစာနည်းသော်လည်း ပညာရမည့်နေရာကို Junior ဘဝတွင် ဦးစားပေးသင့်ပုံ)"
+        },
+        {
+            "date": "28/Jan/2026",
+            "title": "Debugging is 90% of the Job",
+            "content_format": "Skill / Mindset",
+            "core_concept": "Don't get frustrated by errors. Errors are clues. Learn to love the debugging process. (အမှားရှာဖွေခြင်းသည် အလုပ်၏ အဓိကအစိတ်အပိုင်းဖြစ်သဖြင့် စိတ်ပျက်မနေဘဲ ပျော်မွေ့အောင် ကြိုးစားနည်း)"
+        },
+        {
+            "date": "30/Jan/2026",
+            "title": "Designer တွေနဲ့ ရန်မဖြစ်ပါနဲ့",
+            "content_format": "Workplace / Communication",
+            "core_concept": "Understanding UI/UX principles helps you communicate technical limitations politely. (နည်းပညာပိုင်းဆိုင်ရာ ကန့်သတ်ချက်များကို Designer နားလည်အောင် ရှင်းပြညှိနှိုင်းနည်း)"
+        },
+        {
+            "date": "02/Feb/2026",
+            "title": "အလုပ်မရသေးခင် အချိန်ကို ဘယ်လိုသုံးမလဲ?",
+            "content_format": "Productivity / Job Hunt",
+            "core_concept": "Treat job hunting as a full-time job. Code daily, Network daily. Don't just wait. (အလုပ်လျှောက်ထားဆဲ ကာလတွင် အချိန်ကို အကျိုးရှိရှိ အသုံးချကာ Skill မြှင့်တင်နည်း)"
+        },
+        {
+            "date": "04/Feb/2026",
+            "title": "Copy-Paste လုပ်တာ အပြစ်မဟုတ်ပါ (နားလည်ရင်ပေါ့)",
+            "content_format": "Coding Ethics",
+            "core_concept": "StackOverflow is a tool. It's okay to copy, but you MUST understand what that code does. (ကုဒ်ကူးယူသုံးစွဲခြင်းသည် မဆိုးသော်လည်း ဘာလုပ်လုပ်နေမှန်း မသိဘဲ သုံးခြင်းကသာ အန္တရာယ်ရှိပုံ)"
+        },
+        {
+            "date": "06/Feb/2026",
+            "title": "Continuous Learning: ဒီအလုပ်က တစ်သက်လုံး စာကျက်ရမှာပါ",
+            "content_format": "Career Reality",
+            "core_concept": "If you hate learning new things, this might be the wrong career. Embrace the change. (နည်းပညာလောကတွင် ရပ်တန့်နေ၍မရဘဲ အမြဲမပြတ် လေ့လာသင်ယူနေမှသာ ရပ်တည်နိုင်မည့်အကြောင်း)"
+        }
+    ]
+}
