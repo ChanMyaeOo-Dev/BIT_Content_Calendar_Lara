@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     public function  index()
     {
-        $content = Content::latest()->first();
+        $content = Content::orderBy('id', 'desc')->first();
         return view('home', compact('content'));
     }
 }

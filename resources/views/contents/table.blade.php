@@ -19,7 +19,7 @@
                     {{ $content->title }}
                 </td>
                 <td class="px-6 py-4">
-                    {{ $content->created_at?->diffForHumans() }}
+                    {{ $content->created_at->format('d/m/Y H:i A') }}
                 </td>
                 <td class="px-6 py-4 flex items-center gap-2 justify-end">
                     <a href="{{ route('contents.edit', $content->id) }}" class="flex items-center gap-1 px-2 py-1 text-xs font-medium text-white 

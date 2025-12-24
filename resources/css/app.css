@@ -40,6 +40,18 @@ body {
     font-family: "Padauk", sans-serif;
 }
 
+.swal2-modal {
+    @apply bg-neutral-900 border border-neutral-700;
+}
+
+.swal2-title {
+    @apply text-neutral-300;
+}
+
+.swal2-html-container {
+    @apply text-neutral-500;
+}
+
 .content_card {
     @apply bg-neutral-900 border border-neutral-800 rounded-md p-6 hover:border-neutral-900 hover:shadow-lg duration-300 hover:bg-neutral-800 hover:-translate-y-1.5;
 }

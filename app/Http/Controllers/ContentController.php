@@ -10,7 +10,7 @@ class ContentController extends Controller
 {
     public function index()
     {
-        $contents = Content::paginate(10);
+        $contents = Content::orderBy('id', 'desc')->paginate(10);
         // dd($contents[0]->json_data);
         return view('contents.index', compact('contents'));
     }
