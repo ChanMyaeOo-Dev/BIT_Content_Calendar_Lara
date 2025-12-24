@@ -79,3 +79,7 @@ body {
 .active {
     @apply text-rose-500;
 }
+
+.card {
+    @apply bg-neutral-900 rounded-lg border border-neutral-800 p-8;
+}

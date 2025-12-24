@@ -65,6 +65,4 @@ class ContentController extends Controller
                 'type' => 'success'
             ]);
     }
-
-    public function viewer() {}
 }
