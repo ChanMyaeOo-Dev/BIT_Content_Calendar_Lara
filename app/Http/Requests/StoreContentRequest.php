@@ -15,7 +15,7 @@ class StoreContentRequest extends FormRequest
     {
         return [
             'title' => 'required',
-            'json_data' => 'required',
+            'json_data' => 'required|json',
         ];
     }
 }

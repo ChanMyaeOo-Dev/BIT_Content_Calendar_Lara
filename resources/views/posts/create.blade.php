@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="bg-neutral-950/30 backdrop-blur-2xl sticky top-16 pb-2 pt-6 mb-6">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex items-center justify-between relative">
         <div>
             <input type="text" form="data_form" name="title"
                 class="text-2xl font-semibold text-neutral-200 border-none focus:outline-none" value="Untitled Content">
@@ -12,9 +12,8 @@
                 Create New Contents
             </p>
         </div>
-
         <div class="flex items-center gap-2">
-            <a href="{{ route('contents.index') }}" class="btn-outline-primary">
+            <a href="{{ route('posts.index') }}" class="btn-outline-primary">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-5">
                     <path fill-rule="evenodd"
                         d="M9.53 2.47a.75.75 0 0 1 0 1.06L4.81 8.25H15a6.75 6.75 0 0 1 0 13.5h-3a.75.75 0 0 1 0-1.5h3a5.25 5.25 0 1 0 0-10.5H4.81l4.72 4.72a.75.75 0 1 1-1.06 1.06l-6-6a.75.75 0 0 1 0-1.06l6-6a.75.75 0 0 1 1.06 0Z"
@@ -33,20 +32,11 @@
         </div>
     </div>
 </div>
+
 <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-    <form id="data_form" action="{{ route('contents.store') }}" method="POST">
+    <form id="data_form" action="{{ route('posts.store') }}" method="POST">
         @csrf
-        @include('contents.form')
+        @include('posts.form')
     </form>
 </div>
-<script>
-    document.addEventListener('DOMContentLoaded', async () => {
-    try {
-        const text = await navigator.clipboard.readText();
-        document.getElementById('json_data').value = text;
-    } catch (e) {
-        console.warn('Clipboard access blocked by browser');
-    }
-});
-</script>
 @endsection

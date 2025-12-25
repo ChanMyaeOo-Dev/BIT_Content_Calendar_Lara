@@ -11,10 +11,10 @@
 <div id="toast-container" class="fixed bottom-5 right-5 z-[999] space-y-3">
 </div>
 
-<body class="bg-zinc-950 text-zinc-200">
+<body class="bg-neutral-950 text-neutral-200">
     <!-- Header -->
-    <header class="bg-zinc-900 border-b border-zinc-800 fixed w-full z-50">
-        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+    <header class="bg-neutral-900 border-b border-neutral-800 fixed top-0 w-full z-50 h-16">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
             <a href="{{ route('/') }}">
                 <div class="flex items-center gap-2">
                     <div class=" bg-rose-500 text-white p-1 rounded-md">
@@ -36,10 +36,8 @@
     </header>
 
     <!-- Page Content -->
-    <main class="py-28">
-        <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-            @yield('content')
-        </div>
+    <main class="mt-16">
+        @yield('content')
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -115,7 +113,6 @@
     );
     </script>
     @endif
-
 
 </body>
 

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateContentRequest extends FormRequest
+class StorePostRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,7 +23,8 @@ class UpdateContentRequest extends FormRequest
     {
         return [
             'title' => 'required',
-            'json_data' => 'required|json',
+            'body' => 'required',
+            'slide_json_data' => 'required|json',
         ];
     }
 }
