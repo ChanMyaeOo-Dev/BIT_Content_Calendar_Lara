@@ -83,7 +83,11 @@ body {
 }
 
 .btn_copy {
-    @apply font-sans w-full text-xs duration-200 hover:text-rose-500 group-hover:text-rose-500 bg-neutral-950 hover:bg-neutral-900 hover:shadow-lg border border-neutral-800 rounded-md py-3;
+    @apply cursor-pointer w-full text-xs duration-200 hover:text-rose-500 group-hover:text-rose-500 bg-neutral-950 hover:bg-neutral-900 hover:shadow-lg border border-neutral-800 rounded-md py-3;
+}
+
+.btn_sm {
+    @apply cursor-pointer text-xs duration-200 hover:text-rose-500 group-hover:text-rose-500 bg-neutral-950 hover:bg-neutral-900 hover:shadow-lg border border-neutral-800 rounded-md p-2;
 }
 
 .btn_nav {

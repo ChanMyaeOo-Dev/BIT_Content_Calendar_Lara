@@ -3,7 +3,7 @@
 @section('title', 'Posts Editor')
 
 @section('content')
-    <div class="bg-neutral-950/30 backdrop-blur-2xl sticky top-16 pb-2 pt-6 mb-6">
+    <div id="post_action_bar" class="bg-neutral-950/30 backdrop-blur-2xl sticky top-16 pb-2 pt-6 mb-6">
         <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex items-center justify-between">
             <div class="max-w-xl">
                 <input type="text" form="data_form" name="title"
@@ -34,7 +34,7 @@
             </div>
         </div>
     </div>
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex flex-col">
+    <div id="post_container" class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex flex-col">
         <form id="data_form" action="{{ route('posts.update', $post) }}" method="POST">
             @csrf
             @method('PUT')

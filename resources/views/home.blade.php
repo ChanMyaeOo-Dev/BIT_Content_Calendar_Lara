@@ -70,7 +70,7 @@
                 "target_audience": "Beginners/Junior Developers",
                 "style_guardrails": {
                     "persona": "Experienced Mentor/Teacher (ရင့်ကျက်တည်ငြိမ်သော ဆရာ).",
-                    "voice_signature": "Direct, Concise, Sincere. (စကားကို ဝေ့ဝိုက်မနေဘဲ လိုရင်းကို ထိထိမိမိ ပြောသည်။)",
+                    "voice_signature": "Direct, Concise, Sincere. (စကားကို ဝေ့ဝိုက်မနေဘဲ လိုရင်းကို ထိထိမိမိ ပြောပါ။)",
                     "language_rules": {
                         "self_reference": "Use 'ကျွန်တော်' (STRICT)",
                         "audience_reference": "Use 'ညီတို့ညီမတို့' (STRICT)",
@@ -184,7 +184,7 @@
                                 ],
                                 "visual_asset_suggestion": [
                                     "string",
-                                    "Detail and well structured image grnaration prompt to generate realistic real images with ai. Consistency in image generation."
+                                    "Only 1 detail and well structured image grnaration prompt to generate realistic real images with ai. Consistency in image generation."
                                 ]
                             }]
                         }
