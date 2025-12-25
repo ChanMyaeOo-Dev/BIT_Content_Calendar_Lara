@@ -1,4 +1,4 @@
-<div class="overflow-x-auto bg-neutral-900 rounded-lg border border-neutral-800">
+<div class="overflow-x-auto bg-neutral-900 rounded-lg border border-neutral-800 mb-6">
 
     <table class="min-w-full text-sm text-left text-neutral-300">
 
@@ -6,6 +6,7 @@
             <tr>
                 <th class="px-6 py-4">#</th>
                 <th class="px-6 py-4">Title</th>
+                <th class="px-6 py-4">Last Modified</th>
                 <th class="px-6 py-4">Created At</th>
                 <th class="px-6 py-4 text-right">Actions</th>
             </tr>
@@ -21,7 +22,10 @@
                         </a>
                     </td>
                     <td class="px-6 py-4">
-                        {{ $post->created_at->format('d/m/Y H:i A') }}
+                        {{ $post->updated_at->format('d/m/Y h:i A') }}
+                    </td>
+                    <td class="px-6 py-4">
+                        {{ $post->created_at->format('d/m/Y h:i A') }}
                     </td>
                     <td class="px-6 py-4 flex items-center gap-2 justify-end">
                         <a href="{{ route('posts.edit', $post->id) }}"

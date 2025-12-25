@@ -1,4 +1,4 @@
-<div class="overflow-x-auto bg-neutral-900 rounded-lg border border-neutral-800">
+<div class="overflow-x-auto bg-neutral-900 rounded-lg border border-neutral-800 mb-6">
 
     <table class="min-w-full text-sm text-left text-neutral-300">
 

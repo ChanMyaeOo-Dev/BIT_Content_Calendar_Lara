@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreContentRequest;
 use App\Http\Requests\StorePostRequest;
-use App\Http\Requests\UpdateContentRequest;
 use App\Http\Requests\UpdatePostRequest;
 use App\Models\Post;
 
@@ -12,7 +10,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::orderBy('id', 'desc')->paginate(10);
+        $posts = Post::orderBy('updated_at', 'desc')->paginate(10);
         return view('posts.index', compact('posts'));
     }
 
@@ -42,7 +40,6 @@ class PostController extends Controller
 
     public function edit(Post $post)
     {
-        // dd($post->slide_json_data);
         return view('posts.edit', compact('post'));
     }
 
@@ -52,7 +49,7 @@ class PostController extends Controller
         $post->body = $request->body;
         $post->slide_json_data = json_decode($request->slide_json_data, true);
         $post->update();
-        return redirect()->route('posts.index')
+        return redirect()->back()
             ->with('toast', [
                 'message' => 'Updated successfully',
                 'type' => 'success'
