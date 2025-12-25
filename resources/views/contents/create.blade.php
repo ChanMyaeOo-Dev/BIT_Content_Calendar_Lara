@@ -5,9 +5,10 @@
 @section('content')
 <div class="bg-neutral-950/30 backdrop-blur-2xl sticky top-16 pb-2 pt-6 mb-6">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        <div>
+        <div class="max-w-xl">
             <input type="text" form="data_form" name="title"
-                class="text-2xl font-semibold text-neutral-200 border-none focus:outline-none" value="Untitled Content">
+                class="text-2xl w-xl font-semibold text-neutral-200 border-none focus:outline-none"
+                value="Untitled Content">
             <p class="text-sm text-neutral-500">
                 Create New Contents
             </p>

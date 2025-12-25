@@ -8,19 +8,19 @@
         @if($content && isset($content->json_data['contents']))
         @foreach($content->json_data['contents'] as $item)
         <div class="content_card group">
-            <div class="flex justify-between items-start">
-                <span class="text-sm">{{ $item['date'] }}</span>
-                <span
-                    class="bg-neutral-800 text-neutral-300 text-xs px-2 py-1 rounded group-hover:bg-neutral-900 group-hover:text-rose-500">
-                    {{ $item['content_format'] }}
-                </span>
+            <div class="border-b border-neutral-700 pb-3 mb-3 h-full">
+                <div class="flex justify-between items-start">
+                    <span class="text-sm">{{ $item['date'] }}</span>
+                    <span
+                        class="bg-neutral-800 text-neutral-300 text-xs px-2 py-1 rounded group-hover:bg-neutral-900 group-hover:text-rose-500">
+                        {{ $item['content_format'] }}
+                    </span>
+                </div>
+                <h3 class=" text-base font-semibold mt-3 line-clamp-2">{{ $item['title'] }}</h3>
+                <p class="text-neutral-400 mt-2 text-sm leading-6 line-clamp-2">
+                    {{ $item['core_concept'] }}
+                </p>
             </div>
-
-            <h3 class=" text-base font-semibold mt-3 line-clamp-2">{{ $item['title'] }}</h3>
-            <p class="text-neutral-400 mt-2 text-sm leading-6 line-clamp-2">
-                {{ $item['core_concept'] }}
-            </p>
-            <hr class=" text-neutral-700 my-3" />
             <button class="btn_copy">
                 <div class="flex items-center justify-center gap-1">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
