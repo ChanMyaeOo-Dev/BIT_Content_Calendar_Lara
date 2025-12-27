@@ -101,6 +101,9 @@
                 document.getElementById('full_screen_btn_update')?.click();
             }
         });
+        document.getElementById('update_btn').addEventListener('click', () => {
+            document.getElementById('full_screen_btn_update')?.click();
+        })
         full_screen_btn_update.addEventListener('click', async () => {
             const form = document.getElementById('data_form');
             const button = document.getElementById('full_screen_btn_update');
