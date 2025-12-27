@@ -22,9 +22,9 @@ class UpdatePostRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required',
-            'body' => 'required',
-            'slide_json_data' => 'required|json',
+            // 'title' => 'required',
+            // 'body' => 'required',
+            // 'slide_json_data' => 'required|json',
         ];
     }
 }

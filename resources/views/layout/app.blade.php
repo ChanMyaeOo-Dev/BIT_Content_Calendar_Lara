@@ -115,7 +115,7 @@
             );
         </script>
     @endif
-
+    @stack('script')
 </body>
 
 </html>

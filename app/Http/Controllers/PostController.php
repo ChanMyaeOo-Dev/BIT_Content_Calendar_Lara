@@ -49,11 +49,14 @@ class PostController extends Controller
         $post->body = $request->body;
         $post->slide_json_data = json_decode($request->slide_json_data, true);
         $post->update();
-        return redirect()->back()
-            ->with('toast', [
-                'message' => 'Updated successfully',
-                'type' => 'success'
-            ]);
+
+        return response()->json([
+            'status' => true,
+            'toast' => [
+                'message' => 'Post updated successfully',
+                'type' => 'success',
+            ],
+        ]);
     }
 
     public function destroy(Post $post)

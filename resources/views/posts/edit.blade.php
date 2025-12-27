@@ -37,6 +37,7 @@
     <div id="post_container" class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 flex flex-col">
         <form id="data_form" action="{{ route('posts.update', $post) }}" method="POST">
             @csrf
+            <meta name="csrf-token" content="{{ csrf_token() }}">
             @method('PUT')
             @include('posts.form')
         </form>
