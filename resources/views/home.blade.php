@@ -136,7 +136,7 @@
                         }
                     },
                     "4_hashtags": "Relevant educational keywords.",
-                    "5_dialogue_script_raw_text": "** In a copyable format with code frame ** formated_for_easy_reading_and_line_spaces_loosely(2_introduction + 3_dialogue_script. + 4_hashtags)",
+                    "5_dialogue_script_raw_text": "** In a copyable format with code frame not json ** formated_for_easy_reading_and_line_spaces_loosely(2_introduction + 3_dialogue_script. + 4_hashtags)",
                     "6_presentation_slides_data_json": {
                         "instruction": "Inorder to make a presentation for 5_dialogue_script_raw_text, generate RAW JSON data for slides. Data only.",
                         "language_rules": {
