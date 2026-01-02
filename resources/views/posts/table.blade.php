@@ -20,7 +20,8 @@
 
         <tbody class="divide-y divide-neutral-800">
             @foreach ($posts as $index => $post)
-                <tr class="hover:text-rose-500 transition">
+                <tr class="hover:text-rose-500 transition cursor-pointer"
+                    data-href="{{ route('posts.edit', $post->id) }}">
                     <td class="px-6 py-4">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                             stroke="currentColor" class="size-4">
@@ -71,3 +72,13 @@
         </tbody>
     </table>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('tr[data-href]').forEach(row => {
+            row.addEventListener('click', e => {
+                if (e.target.closest('.row-ignore')) return;
+                window.location = row.dataset.href;
+            });
+        });
+    });
+</script>

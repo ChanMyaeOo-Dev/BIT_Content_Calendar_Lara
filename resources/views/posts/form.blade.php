@@ -25,8 +25,7 @@
         </div>
     @enderror
 </div>
-
-@if (request()->routeIs('posts.edit'))
+@if (request()->routeIs('posts.edit') && count($post->slide_json_data) > 0)
     @include('components.slide_preview')
 @endif
 
@@ -67,8 +66,8 @@
             header.classList.toggle('hidden');
             post_action_bar.classList.toggle('hidden');
             slide_json_data_box.classList.toggle('hidden');
-            image_prompt_box.classList.toggle('hidden');
-            slide_visual_box.classList.toggle('hidden');
+            image_prompt_box?.classList.toggle('hidden');
+            slide_visual_box?.classList.toggle('hidden');
             post_container.classList.toggle('max-w-6xl');
             post_container.classList.toggle('w-full');
             main_container.classList.toggle('mt-16');
