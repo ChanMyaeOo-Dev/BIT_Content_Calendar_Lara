@@ -1,0 +1,438 @@
+@extends('layout.app')
+@section('title', 'BIT Content Calendar')
+@section('content')
+    <style>
+        :root {
+            --bg-primary: #f8fafc;
+            --card-bg: #ffffff;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-primary: #0a0a0a;
+                --card-bg: #171717;
+            }
+        }
+
+        body {
+            background-color: var(--bg-primary);
+            transition: background-color 0.3s ease;
+        }
+
+        .category-work {
+            border-left: 4px solid #e11d48;
+        }
+
+        .category-university {
+            border-left: 4px solid #e11d48;
+        }
+
+        .category-learning {
+            border-left: 4px solid #e11d48;
+        }
+
+        .category-youtube {
+            border-left: 4px solid #e11d48;
+        }
+
+        .category-recovery {
+            border-left: 4px solid #e11d48;
+        }
+
+        .category-strategy {
+            border-left: 4px solid #e11d48;
+        }
+
+        .glass-morphism {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 pt-6">
+        <!-- Header -->
+        <header class="hidden mb-10 text-center md:text-left flex-col md:flex-row md:items-end justify-between gap-4">
+            <div>
+                <h1 class="text-4xl font-bold tracking-tight">Weekly Focus</h1>
+                <p class="text-neutral-500 dark:text-neutral-400 mt-2">Balancing Work, University, and Creative Growth</p>
+            </div>
+            <div id="current-date" class="text-lg font-medium opacity-75"></div>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+
+            <!-- Sidebar: Goals & Stats -->
+            <aside class="lg:col-span-4 space-y-6">
+                <!-- Primary Goals Card -->
+                <div
+                    class="bg-white dark:bg-neutral-900 p-6 rounded-lg shadow-sm border border-neutral-200 dark:border-neutral-800">
+                    <h2 class="text-xl font-bold mb-4 flex items-center gap-2">
+                        <i class="fas fa-bullseye text-rose-500"></i> Primary Goals
+                    </h2>
+                    <div id="goals-container" class="space-y-4">
+                        <!-- Goals injected by JS -->
+                    </div>
+                </div>
+
+                <!-- Skill Tags -->
+                <div
+                    class="bg-white dark:bg-neutral-900 p-6 rounded-lg shadow-sm border border-neutral-200 dark:border-neutral-800">
+                    <h2 class="text-xl font-bold mb-4 flex items-center gap-2">
+                        <i class="fas fa-code text-emerald-500"></i> Core Skills
+                    </h2>
+                    <div id="skills-container" class="flex flex-wrap gap-2">
+                        <!-- Skills injected by JS -->
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content: Schedule -->
+            <main class="lg:col-span-8">
+                <!-- Day Tabs -->
+                <div class="flex overflow-x-auto pb-2 mb-6 no-scrollbar gap-2 md:gap-4 sticky top-0 bg-opacity-90 z-10 py-2"
+                    id="day-tabs">
+                    <!-- Tabs injected by JS -->
+                </div>
+
+                <!-- Schedule Display -->
+                <div id="schedule-content" class="space-y-4">
+                    <!-- Activities injected by JS -->
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        const scheduleData = {
+            "weekly_schedule": [{
+                    "day": "Monday",
+                    "university_hours": "11:00 AM - 05:00 PM",
+                    "activities": [{
+                            "time": "06:30 - 10:30",
+                            "task": "Work Session",
+                            "category": "Work",
+                            "duration_hrs": 4
+                        },
+                        {
+                            "time": "11:00 - 17:00",
+                            "task": "University Classes",
+                            "category": "University"
+                        },
+                        {
+                            "time": "19:00 - 20:30",
+                            "task": "Programming Study",
+                            "category": "Learning",
+                            "growth_focus": "Mastering Laravel/New Tech"
+                        },
+                        {
+                            "time": "20:30 - 21:30",
+                            "task": "YouTube Scripting",
+                            "category": "YouTube",
+                            "growth_focus": "Content Writing"
+                        }
+                    ]
+                },
+                {
+                    "day": "Tuesday",
+                    "university_hours": "07:00 AM - 02:00 PM",
+                    "activities": [{
+                            "time": "07:00 - 14:00",
+                            "task": "University Classes",
+                            "category": "University"
+                        },
+                        {
+                            "time": "15:30 - 19:30",
+                            "task": "Work Session",
+                            "category": "Work",
+                            "duration_hrs": 4
+                        },
+                        {
+                            "time": "20:30 - 21:30",
+                            "task": "YouTube Recording",
+                            "category": "YouTube",
+                            "growth_focus": "Content Creation"
+                        }
+                    ]
+                },
+                {
+                    "day": "Wednesday",
+                    "university_hours": "07:00 AM - 05:00 PM",
+                    "activities": [{
+                            "time": "07:00 - 17:00",
+                            "task": "University Classes (Full Day)",
+                            "category": "University"
+                        },
+                        {
+                            "time": "18:30 - 22:30",
+                            "task": "Work Session",
+                            "category": "Work",
+                            "duration_hrs": 4
+                        },
+                        {
+                            "time": "22:30",
+                            "task": "Rest/Sleep",
+                            "category": "Recovery"
+                        }
+                    ]
+                },
+                {
+                    "day": "Thursday",
+                    "university_hours": "N/A",
+                    "activities": [{
+                            "time": "09:00 - 13:00",
+                            "task": "Work Session",
+                            "category": "Work",
+                            "duration_hrs": 4
+                        },
+                        {
+                            "time": "14:00 - 16:30",
+                            "task": "Programming Learning",
+                            "category": "Learning",
+                            "growth_focus": "Mastering Laravel/New Tech"
+                        },
+                        {
+                            "time": "16:30 - 18:00",
+                            "task": "YouTube Editing (Part 1)",
+                            "category": "YouTube",
+                            "growth_focus": "Content Creation"
+                        }
+                    ]
+                },
+                {
+                    "day": "Friday",
+                    "university_hours": "N/A",
+                    "activities": [{
+                            "time": "09:00 - 13:00",
+                            "task": "Work Session",
+                            "category": "Work",
+                            "duration_hrs": 4
+                        },
+                        {
+                            "time": "14:00 - 16:30",
+                            "task": "YouTube Editing & SEO",
+                            "category": "YouTube",
+                            "growth_focus": "Thumbnail & Metadata"
+                        },
+                        {
+                            "time": "19:30 - 21:00",
+                            "task": "English & Self-Study",
+                            "category": "Learning",
+                            "growth_focus": "Shadowing Practice"
+                        }
+                    ]
+                },
+                {
+                    "day": "Saturday",
+                    "university_hours": "N/A",
+                    "activities": [{
+                            "time": "11:00",
+                            "task": "YouTube Upload",
+                            "category": "YouTube",
+                            "growth_focus": "Audience Engagement"
+                        },
+                        {
+                            "time": "13:00 - 16:00",
+                            "task": "Intensive Learning",
+                            "category": "Learning",
+                            "growth_focus": "Mastering Laravel/New Tech"
+                        }
+                    ]
+                },
+                {
+                    "day": "Sunday",
+                    "university_hours": "N/A",
+                    "activities": [{
+                            "time": "Morning",
+                            "task": "Strategy & Planning",
+                            "category": "Strategy",
+                            "growth_focus": "Next Week Content Idea"
+                        },
+                        {
+                            "time": "Full Day",
+                            "task": "Rest & Recharge",
+                            "category": "Recovery"
+                        }
+                    ]
+                }
+            ],
+            "goals": {
+                "work_per_day": 4,
+                "youtube_frequency": "2 videos/week",
+                "primary_skills": ["Laravel", "English Fluency"]
+            }
+        };
+
+        let currentActiveDay = new Date().toLocaleDateString('en-US', {
+            weekday: 'long'
+        });
+        // Fallback if current day is not in data (though it should be)
+        if (!scheduleData.weekly_schedule.find(s => s.day === currentActiveDay)) {
+            currentActiveDay = scheduleData.weekly_schedule[0].day;
+        }
+
+        function init() {
+            renderGoals();
+            renderSkills();
+            renderTabs();
+            renderSchedule(currentActiveDay);
+
+            const dateDisplay = document.getElementById('current-date');
+            dateDisplay.textContent = new Date().toLocaleDateString('en-US', {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+        }
+
+        function renderGoals() {
+            const container = document.getElementById('goals-container');
+            const g = scheduleData.goals;
+
+            const items = [{
+                    label: 'Work Target',
+                    val: `${g.work_per_day} hrs/day`,
+                    icon: 'fa-briefcase',
+                    color: 'text-rose-500'
+                },
+                {
+                    label: 'Contents Target',
+                    val: g.youtube_frequency,
+                    icon: 'fa-video',
+                    color: 'text-rose-500'
+                }
+            ];
+
+            container.innerHTML = items.map(item => `
+                <div class="flex items-center justify-between p-3 bg-neutral-50 dark:bg-neutral-800/50 rounded-lg">
+                    <div class="flex items-center gap-3">
+                        <i class="fas ${item.icon} ${item.color}"></i>
+                        <span class="text-sm font-medium opacity-80">${item.label}</span>
+                    </div>
+                    <span class="font-bold text-sm">${item.val}</span>
+                </div>
+            `).join('');
+        }
+
+        function renderSkills() {
+            const container = document.getElementById('skills-container');
+            container.innerHTML = scheduleData.goals.primary_skills.map(skill => `
+                <span class="px-3 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 text-xs font-bold rounded-full border border-emerald-200 dark:border-emerald-800">
+                    ${skill}
+                </span>
+            `).join('');
+        }
+
+        function renderTabs() {
+            const container = document.getElementById('day-tabs');
+            container.innerHTML = scheduleData.weekly_schedule.map(dayObj => `
+                <button onclick="changeDay('${dayObj.day}')" 
+                    id="tab-${dayObj.day}"
+                    class="px-5 py-2 whitespace-nowrap rounded-lg text-sm font-bold transition-all
+                    ${dayObj.day === currentActiveDay 
+                        ? 'bg-rose-600 text-white shadow-lg shadow-rose-500/30' 
+                        : 'bg-white dark:bg-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-500 dark:text-neutral-400'}">
+                    ${dayObj.day}
+                </button>
+            `).join('');
+        }
+
+        function changeDay(day) {
+            currentActiveDay = day;
+            renderTabs();
+            renderSchedule(day);
+        }
+
+        function getCategoryIcon(cat) {
+            const icons = {
+                'Work': 'fa-laptop-code',
+                'University': 'fa-university',
+                'Learning': 'fa-book-open',
+                'YouTube': 'fa-play-circle',
+                'Recovery': 'fa-bed',
+                'Strategy': 'fa-chess-knight'
+            };
+            return icons[cat] || 'fa-calendar-check';
+        }
+
+        function renderSchedule(dayName) {
+            const container = document.getElementById('schedule-content');
+            const dayData = scheduleData.weekly_schedule.find(d => d.day === dayName);
+
+            let html = '';
+
+            // University Hours Info
+            if (dayData.university_hours !== "N/A") {
+                html += `
+                    <div class="bg-violet-50 dark:bg-violet-900/20 border border-violet-100 dark:border-violet-800 p-4 rounded-lg flex items-center justify-between mb-6">
+                        <div class="flex items-center gap-3">
+                            <div class="p-2 bg-violet-500 rounded-lg text-white">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs uppercase font-bold text-violet-600 dark:text-violet-400 tracking-wider">Campus Hours</p>
+                                <p class="font-bold">${dayData.university_hours}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+
+            // Timeline items
+            html += dayData.activities.map(act => `
+                <div class="group relative bg-white dark:bg-neutral-900 p-5 rounded-lg shadow-sm border border-neutral-200 dark:border-neutral-800 category-${act.category.toLowerCase()} transition-all hover:shadow-md">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                        <div class="flex items-start gap-4">
+                            <div class="mt-1 p-2 rounded-lg bg-neutral-100 dark:bg-neutral-800 text-neutral-500 group-hover:bg-rose-50 dark:group-hover:bg-rose-900/30 group-hover:text-rose-500 transition-colors">
+                                <i class="fas ${getCategoryIcon(act.category)}"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg">${act.task}</h3>
+                                <div class="flex flex-wrap items-center gap-x-4 gap-y-1 mt-1">
+                                    <span class="text-sm font-semibold text-neutral-500 dark:text-neutral-400 flex items-center gap-1">
+                                        <i class="far fa-clock"></i> ${act.time}
+                                    </span>
+                                    <span class="text-xs px-2 py-0.5 rounded-lg bg-neutral-100 dark:bg-neutral-800 font-bold uppercase tracking-tight text-neutral-500">
+                                        ${act.category}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        ${renderGrowthFocus(act)}
+                        ${renderDuration(act)}
+                    </div>
+                </div>
+            `).join('');
+
+            container.innerHTML = html ||
+                '<p class="text-center py-10 opacity-50">No activities scheduled for this day.</p>';
+        }
+
+        function renderGrowthFocus(act) {
+            if (!act.growth_focus) return '';
+            return `
+                    <div class="md:text-right border-t md:border-t-0 pt-3 md:pt-0 border-neutral-100 dark:border-neutral-800">
+                        <p class="text-[10px] uppercase font-bold text-emerald-600 dark:text-emerald-400 tracking-widest mb-1">
+                            Growth Focus
+                        </p>
+                        <p class="text-sm italic opacity-80">"${act.growth_focus}"</p>
+                    </div>
+                `;
+        }
+
+        function renderDuration(act) {
+            if (!act.duration_hrs) return '';
+            return `
+                     <div class="hidden md:block">
+                        <div class="w-12 h-12 rounded-full border-4 border-rose-500/20 flex items-center justify-center relative">
+                            <span class="text-[10px] font-black">${act.duration_hrs}h</span>
+                        </div>
+                    </div>
+                `;
+        }
+
+        // Initialize on load
+        window.onload = init;
+    </script>
+@endsection

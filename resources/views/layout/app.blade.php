@@ -9,6 +9,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/images/logo_icon_3d.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/images/logo_icon_3d.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/logo_icon_3d.png') }}">
+    <link rel="stylesheet" href="{{ asset('assets/fontawesome/css/all.min.css') }}">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -27,7 +28,7 @@
                     </div>
                     {{-- <img src="{{ asset('assets/images/logo_icon_3d.png') }}" alt="logo" class="size-10 rounded-md"> --}}
                     <h1 class="text-lg font-bold font-sans">
-                        BIT Content <span class="text-rose-500">Calendar</span>
+                        BIT Content <span class="text-rose-500">Management</span>
                     </h1>
                 </div>
             </a>
@@ -42,7 +43,8 @@
         @yield('content')
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> --}}
+    <script src="{{ asset('assets/js/sweetalert2.js') }}"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {

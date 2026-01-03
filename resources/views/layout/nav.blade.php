@@ -10,22 +10,30 @@
         </span>
     </div>
 </a>
-<a href="{{ route('contents.index') }}" class="btn_nav {{ nav_active('contents.*') }}">
+
+
+<a href="{{ route('time_table') }}" class="btn_nav {{ nav_active('time_table') }}">
     <div class="flex items-center justify-center gap-1">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-            class="size-4">
-            <path stroke-linecap="round" stroke-linejoin="round"
-                d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
-        </svg>
+        <i class="fas fa-calendar-alt"></i>
         <span class=" text-nowrap">
-            Editor
+            Time Table
         </span>
     </div>
 </a>
+
+<a href="{{ route('prompt_generator') }}" class="btn_nav {{ nav_active('prompt_generator') }}">
+    <div class="flex items-center justify-center gap-1">
+        <i class="fas fa-pencil-alt"></i>
+        <span class=" text-nowrap">
+            Prompt Generator
+        </span>
+    </div>
+</a>
+
 <a href="{{ route('posts.index') }}" class="btn_nav {{ nav_active('posts.*') }}">
     <div class="flex items-center justify-center gap-1">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-            class="size-4">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-4">
             <path stroke-linecap="round" stroke-linejoin="round"
                 d="M7.5 3.75H6A2.25 2.25 0 0 0 3.75 6v1.5M16.5 3.75H18A2.25 2.25 0 0 1 20.25 6v1.5m0 9V18A2.25 2.25 0 0 1 18 20.25h-1.5m-9 0H6A2.25 2.25 0 0 1 3.75 18v-1.5M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
         </svg>
@@ -34,15 +42,16 @@
         </span>
     </div>
 </a>
-<button class="btn_nav">
+
+<a href="{{ route('contents.index') }}" class="btn_nav {{ nav_active('contents.*') }}">
     <div class="flex items-center justify-center gap-1">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-            class="size-4">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-4">
             <path stroke-linecap="round" stroke-linejoin="round"
-                d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
         </svg>
         <span class=" text-nowrap">
-            Admin
+            Editor
         </span>
     </div>
-</button>
+</a>

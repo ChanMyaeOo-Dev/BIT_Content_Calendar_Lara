@@ -20,7 +20,7 @@
 
         <tbody class="divide-y divide-neutral-800">
             @foreach ($posts as $index => $post)
-                <tr class="hover:text-rose-500 transition cursor-pointer"
+                <tr class="hover:text-rose-500 transition cursor-pointer z-10"
                     data-href="{{ route('posts.edit', $post->id) }}">
                     <td class="px-6 py-4">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -43,7 +43,7 @@
                     <td class="px-6 py-4 flex items-center gap-2 justify-end">
                         <a href="{{ route('posts.edit', $post->id) }}"
                             class="flex items-center gap-1 px-2 py-1 text-xs font-medium text-white 
-                                       bg-rose-500 hover:bg-rose-600 rounded-md">
+                                       bg-rose-500 hover:bg-rose-600 rounded-md row-ignore">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke-width="1.5" stroke="currentColor" class="size-3">
                                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -52,7 +52,7 @@
                             <span>Edit</span>
                         </a>
                         <button
-                            class="btn-delete flex items-center gap-1 px-2 py-1 text-xs font-medium text-rose-600 border border-rose-500 hover:bg-rose-50 rounded-md"
+                            class="row-ignore cursor-pointer btn-delete flex items-center gap-1 px-2 py-1 text-xs font-medium text-rose-600 border border-rose-500 hover:bg-rose-50 rounded-md"
                             data-form="delete-form-{{ $post->id }}">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                                 stroke-width="1.5" stroke="currentColor" class="size-3">

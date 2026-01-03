@@ -24,7 +24,7 @@ class StorePostRequest extends FormRequest
         return [
             'title' => 'required',
             'body' => 'required',
-            'slide_json_data' => 'required|json',
+            // 'slide_json_data' => 'required|json',
         ];
     }
 }

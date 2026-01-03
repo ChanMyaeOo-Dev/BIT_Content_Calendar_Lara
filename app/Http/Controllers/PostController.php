@@ -24,7 +24,7 @@ class PostController extends Controller
         $post = new Post();
         $post->title = $request->title;
         $post->body = $request->body;
-        $post->slide_json_data = json_decode($request->slide_json_data, true);
+        $post->slide_json_data = isset($request->slide_json_data) ? json_decode($request->slide_json_data, true) : json_decode('[]', true);
         $post->save();
         return redirect()->route('posts.index')
             ->with('toast', [

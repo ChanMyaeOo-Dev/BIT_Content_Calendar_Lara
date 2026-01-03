@@ -17,8 +17,10 @@
             </button>
         </div>
     </div>
-    <textarea form="data_form" name="body" id="body" class="text-neutral-300 m-8 leading-9 focus:outline-none"
+    <textarea form="data_form" name="body" id="body"
+        class="body text-neutral-300 m-8 leading-9 focus:outline-none caret-rose-500 focus:caret-rose-600 cursor-text"
         rows="10" autofocus>{{ isset($post) ? $post->body : old('body') }}</textarea>
+
     @error('body')
         <div class="text-rose-500 text-sm mx-8 my-3">
             {{ '!!! ' . $message }}
