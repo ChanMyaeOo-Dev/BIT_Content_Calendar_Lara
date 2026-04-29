@@ -28,10 +28,10 @@
     @enderror
 </div>
 @if (request()->routeIs('posts.edit') && count($post->slide_json_data) > 0)
-    @include('components.slide_preview')
+    {{-- @include('components.slide_preview') --}}
 @endif
 
-<div id="slide_json_data_box" class="bg-neutral-900 rounded-lg border border-neutral-800 flex flex-col">
+<div id="slide_json_data_box" class="hidden bg-neutral-900 rounded-lg border border-neutral-800 flex-col">
     <div
         class="flex items-center justify-between bg-neutral-900 border-b border-b-neutral-800 border-t border-t-rose-500 rounded-t-md px-8 py-3">
         <p class="text-nowrap">Slide Json Data</p>
@@ -98,8 +98,12 @@
 
             if (isCtrlOrCmd && e.key.toLowerCase() === 's') {
                 e.preventDefault();
-                // alert('CTRL + S detected');
                 document.getElementById('full_screen_btn_update')?.click();
+            }
+
+            if (isCtrlOrCmd && e.key.toLowerCase() === 'b') {
+                e.preventDefault();
+                window.location.href = "{{ route('posts.index') }}";
             }
         });
         document.getElementById('update_btn').addEventListener('click', () => {

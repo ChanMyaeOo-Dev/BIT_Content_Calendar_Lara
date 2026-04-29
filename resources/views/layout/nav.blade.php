@@ -1,3 +1,16 @@
+<a href="{{ route('posts.index') }}" class="btn_nav {{ nav_active('posts.*') }}">
+    <div class="flex items-center justify-center gap-1">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="size-4">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                d="M7.5 3.75H6A2.25 2.25 0 0 0 3.75 6v1.5M16.5 3.75H18A2.25 2.25 0 0 1 20.25 6v1.5m0 9V18A2.25 2.25 0 0 1 18 20.25h-1.5m-9 0H6A2.25 2.25 0 0 1 3.75 18v-1.5M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+        </svg>
+        <span class=" text-nowrap">
+            Posts
+        </span>
+    </div>
+</a>
+{{--
 <a href="{{ route('/') }}" class="btn_nav {{ nav_active('/') }}">
     <div class="flex items-center justify-center gap-1">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
@@ -9,7 +22,7 @@
             Calendar
         </span>
     </div>
-</a>
+</a> --}}
 
 
 <a href="{{ route('time_table') }}" class="btn_nav {{ nav_active('time_table') }}">
@@ -30,20 +43,16 @@
     </div>
 </a>
 
-<a href="{{ route('posts.index') }}" class="btn_nav {{ nav_active('posts.*') }}">
+<a href="{{ route('notes.index') }}" class="btn_nav {{ nav_active('notes.*') }}">
     <div class="flex items-center justify-center gap-1">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-            stroke="currentColor" class="size-4">
-            <path stroke-linecap="round" stroke-linejoin="round"
-                d="M7.5 3.75H6A2.25 2.25 0 0 0 3.75 6v1.5M16.5 3.75H18A2.25 2.25 0 0 1 20.25 6v1.5m0 9V18A2.25 2.25 0 0 1 18 20.25h-1.5m-9 0H6A2.25 2.25 0 0 1 3.75 18v-1.5M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
-        </svg>
+        <i class="fas fa-sticky-note"></i>
         <span class=" text-nowrap">
-            Posts
+            Notes
         </span>
     </div>
 </a>
 
-<a href="{{ route('contents.index') }}" class="btn_nav {{ nav_active('contents.*') }}">
+{{-- <a href="{{ route('contents.index') }}" class="btn_nav {{ nav_active('contents.*') }}">
     <div class="flex items-center justify-center gap-1">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
             stroke="currentColor" class="size-4">
@@ -54,4 +63,4 @@
             Editor
         </span>
     </div>
-</a>
+</a> --}}

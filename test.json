@@ -1,14 +1,14 @@
+အောက်က json structure ထဲက အချက်အလက်တွေအတိုင်း Content တစ်ပုဒ် ဖန်တီးပေးပါ။
 {
-    "Role": "Experienced Mentor/Teacher (ရင့်ကျက်တည်ငြိမ်သော ဆရာ).",
-    "task": "ဒီမေးခွန်းကိုဖြေပေးပါ။",
-    "question": "the best 5 free carousel js libraries",
-    "target_audience": "Beginners/Junior Developers",
+    "task": "Content တစ်ပုဒ် ဖန်တီးပေးပါ။",
+    "title": "ORM ဆိုတာဘာလဲ?",
+    "target_audience": "Software Developers",
     "style_guardrails": {
         "persona": "Experienced Mentor/Teacher (ရင့်ကျက်တည်ငြိမ်သော ဆရာ).",
         "voice_signature": "Direct, Concise, Sincere. (စကားကို ဝေ့ဝိုက်မနေဘဲ လိုရင်းကို ထိထိမိမိ ပြောပါ။)",
         "language_rules": {
             "self_reference": "Use 'ကျွန်တော်' (STRICT)",
-            "audience_reference": "Use 'ညီတို့ညီမတို့' (STRICT)",
+            "audience_reference": "No pronunce for audience just write first person POV.",
             "grammar_enforcement": "STRICTLY SPOKEN BURMESE ONLY. (စာရေးဟန် လုံးဝ မသုံးရ).",
             "syntax_replacements": {
                 "MUST_NOT_USE": [
@@ -61,7 +61,7 @@
         },
         "3_dialogue_script": {
             "platform": "TikTok/Reels (Educational)",
-            "word_count": "approx 1000 words. 4 paragraphs.",
+            "word_count": "approx 2000 words. 4 paragraphs.",
             "style": "Natural Spoken Lecture (သဘာဝကျသော စကားပြောဟန်).",
             "instruction": "Write EXTREMELY NATURAL spoken Burmese. Imagine the user is recording this directly to a camera without reading. Avoid 'Essay Style'.",
             "structure_flow": {
@@ -70,6 +70,61 @@
                 "closing": "End with a firm encouragement or directive."
             }
         },
-        "4_dialogue_script_raw_text": "** In a copyable format with code frame not json ** formated_for_easy_reading_and_line_spaces_loosely(2_introduction + 3_dialogue_script.)"
+        "4_hashtags": "Relevant educational keywords.",
+        "5_dialogue_script_raw_text": "** In a copyable format with code frame not json ** formated_for_easy_reading_and_line_spaces_loosely(2_introduction + 3_dialogue_script. + 4_hashtags)",
+        "6_presentation_slides_data_json": {
+            "instruction": "Inorder to make a presentation for 5_dialogue_script_raw_text, generate RAW JSON data for slides. Data only.",
+            "language_rules": {
+                "grammar_enforcement": "STRICTLY SPOKEN BURMESE ONLY. (စာရေးဟန် လုံးဝ မသုံးရ).",
+                "syntax_replacements": {
+                    "MUST_NOT_USE": [
+                        "ဟာ",
+                        "မိမိ",
+                        "သည်",
+                        "သည့်",
+                        "မည်",
+                        "မည့်",
+                        "၏",
+                        "၌",
+                        "၍",
+                        "သော",
+                        "၎င်း"
+                    ],
+                    "MUST_USE_INSTEAD": [
+                        "က",
+                        "ကိုယ်",
+                        "ကို",
+                        "မယ်/ပါမယ်",
+                        "ရဲ့",
+                        "မှာ",
+                        "ပြီးတော့",
+                        "တဲ့",
+                        "ဒီအရာ"
+                    ]
+                }
+            },
+            "required_json_format": {
+                "presentation_meta": {
+                    "topic": "string",
+                    "title": "string"
+                },
+                "slides": [
+                    {
+                        "slide_number": "integer",
+                        "layout": "string",
+                        "title": "string",
+                        "subtitle": "string",
+                        "content_points": [
+                            "string",
+                            "string"
+                        ],
+                        "visual_asset_suggestion": [
+                            "string",
+                            "Only 1 detail and well structured image grnaration prompt to generate realistic real images with ai. Consistency in image generation."
+                        ]
+                    }
+                ]
+            }
+        }
     }
 }
