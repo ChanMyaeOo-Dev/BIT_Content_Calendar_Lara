@@ -20,6 +20,11 @@ class HomeController extends Controller
     {
         return view('prompt_generator');
     }
+
+    public function image_prompt_generator()
+    {
+        return view('image_prompt_generator');
+    }
     public function time_table()
     {
         return view('time_table');

@@ -9,17 +9,20 @@
                 Save
             </button>
             <button id="btn_post_body_zoom" type="button" class="btn_sm">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="size-4">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
-                </svg>
+                <div class="flex items-center justify-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-4">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
+                    </svg>
+                    <span>Cmd + M</span>
+                </div>
             </button>
         </div>
     </div>
     <textarea form="data_form" name="body" id="body"
         class="body text-neutral-300 m-8 leading-9 focus:outline-none caret-rose-500 focus:caret-rose-600 cursor-text"
-        rows="10" autofocus>{{ isset($post) ? $post->body : old('body') }}</textarea>
+        rows="16" autofocus>{{ isset($post) ? $post->body : old('body') }}</textarea>
 
     @error('body')
         <div class="text-rose-500 text-sm mx-8 my-3">
@@ -27,9 +30,9 @@
         </div>
     @enderror
 </div>
-@if (request()->routeIs('posts.edit') && count($post->slide_json_data) > 0)
-    {{-- @include('components.slide_preview') --}}
-@endif
+{{-- @if (request()->routeIs('posts.edit') && count($post->slide_json_data) > 0)
+    @include('components.slide_preview')
+@endif --}}
 
 <div id="slide_json_data_box" class="hidden bg-neutral-900 rounded-lg border border-neutral-800 flex-col">
     <div
@@ -46,6 +49,7 @@
         </div>
     @enderror
 </div>
+
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const full_screen_btn_update = document.getElementById('full_screen_btn_update');
@@ -54,10 +58,17 @@
             zoomTasks();
         });
 
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey || e.metaKey && e.key.toLowerCase() === 'm') {
+                e.preventDefault();
+                zoomTasks();
+            }
+        });
+
+
         function zoomTasks() {
             const header = document.getElementById('header');
             const post_action_bar = document.getElementById('post_action_bar');
-            const slide_json_data_box = document.getElementById('slide_json_data_box');
             const image_prompt_box = document.getElementById('image_prompt_box');
             const slide_visual_box = document.getElementById('slide_visual_box');
             const post_container = document.getElementById('post_container');
@@ -67,25 +78,30 @@
             full_screen_btn_update.classList.toggle('hidden');
             header.classList.toggle('hidden');
             post_action_bar.classList.toggle('hidden');
-            slide_json_data_box.classList.toggle('hidden');
             image_prompt_box?.classList.toggle('hidden');
             slide_visual_box?.classList.toggle('hidden');
             post_container.classList.toggle('max-w-6xl');
             post_container.classList.toggle('w-full');
             main_container.classList.toggle('mt-16');
             main_container.classList.toggle('mt-8');
-            text_area_body.rows = text_area_body.rows == 10 ? 18 : 10;
-            btn_post_body_zoom.innerHTML = text_area_body.rows == 10 ?
-                `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-    class="size-4">
-    <path stroke-linecap="round" stroke-linejoin="round"
-        d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
-</svg>` :
-                `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-    class="size-4">
-    <path stroke-linecap="round" stroke-linejoin="round"
-        d="M9 9V4.5M9 9H4.5M9 9 3.75 3.75M9 15v4.5M9 15H4.5M9 15l-5.25 5.25M15 9h4.5M15 9V4.5M15 9l5.25-5.25M15 15h4.5M15 15v4.5m0-4.5 5.25 5.25" />
-</svg>`;
+            text_area_body.rows = text_area_body.rows == 16 ? 18 : 16;
+            btn_post_body_zoom.innerHTML = text_area_body.rows == 16 ?
+                `<div class="flex items-center justify-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="size-4">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15" />
+                    </svg>
+                    <span>Cmd + M</span>
+                </div>` :
+                `<div class="flex items-center justify-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                        class="size-4">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M9 9V4.5M9 9H4.5M9 9 3.75 3.75M9 15v4.5M9 15H4.5M9 15l-5.25 5.25M15 9h4.5M15 9V4.5M15 9l5.25-5.25M15 15h4.5M15 15v4.5m0-4.5 5.25 5.25" />
+                    </svg>
+                    <span>Cmd + M</span>
+                </div>`;
         }
 
     });

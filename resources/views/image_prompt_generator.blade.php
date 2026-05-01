@@ -96,59 +96,49 @@
 
     <script>
         function getFullText(title) {
-            return "အောက်က json structure ထဲက အချက်အလက်တွေအတိုင်း Content တစ်ပုဒ် ဖန်တီးပေးပါ။ " + '\n\n' + JSON
-                .stringify({
-                    "Role": "Content Rewriter + Personalization Engine",
+            return `Create a modern, high-end social media graphic design in 16:9 aspect ratio.
+Style should be minimal, professional, and tech/corporate, inspired by SaaS, fintech, and startup branding.
 
-                    "task": "Below content ကို ဖတ်ပြီး meaning မပြောင်းဘဲ rewrite ပြန်ရေးပါ။ Direct translate မလုပ်ရ။ Natural Facebook post style ပြောင်းပါ။",
+Background:
+Use a deep gradient background (dark blue, navy, or black base) with subtle glow lighting. Add a soft radial light or spotlight effect in the center. Include a very subtle grid or abstract pattern for depth.
 
-                    "input_content": title,
+Layout & Composition:
 
-                    "output_goal": "Make it sound like I read this and I am sharing it in my own words.",
+Keep a clean and balanced layout with strong visual hierarchy
+Add a rounded rectangle frame or soft border lines around the content
+Use spacing generously (premium feel)
 
-                    "style_guardrails": {
+Main Text (Headline):
 
-                        "core_rules": [
-                            "Meaning MUST stay the same.",
-                            "Do NOT add new technical ideas.",
-                            "Do NOT remove key insights.",
-                            "Rewrite only."
-                        ],
+Insert: ${title}
+Large, bold, sans-serif typography
+Use contrast (white or light color)
+Highlight key words with slightly different weight or color
 
-                        "pov_rule": [
-                            "Use first-person (ကျွန်တော် / ကိုယ်).",
-                            "Make it feel like I am sharing something I just learned."
-                        ],
+Design Details:
 
-                        "facebook_style": [
-                            "Start with a natural hook (something I noticed / learned).",
-                            "No formal intro.",
-                            "No definition-style opening.",
-                            "Flow like a personal post."
-                        ],
+Smooth gradients, soft shadows, subtle glow effects
+Modern UI-inspired elements (cards, pills, minimal icons)
+Clean and premium look (no clutter)
 
-                        "language_rules": {
-                            "grammar_enforcement": "STRICTLY SPOKEN BURMESE ONLY",
-                            "flow_control": "Short sentences. Natural pauses. Like talking."
-                        },
+Typography Style:
 
-                        "transformation_rules": [
-                            "Compress unnecessary words.",
-                            "Make sentences clearer and simpler.",
-                            "Replace formal tone with conversational tone.",
-                            "If original is complex, simplify but keep meaning."
-                        ],
+Use modern sans-serif fonts (clean, geometric)
+Strong hierarchy: headline > subtext > small labels
 
-                        "forbidden": [
-                            "Textbook explanation tone",
-                            "Bullet point teaching style",
-                            "Direct translation style",
-                            "Robotic wording"
-                        ],
+Color Style:
 
-                        "ending_rule": "End like a personal takeaway or reflection."
-                    }
-                })
+Primary: deep blue / dark gradient
+Accent: light blue or white glow
+
+Quality:
+
+Ultra clean, sharp, high resolution
+Professional branding style
+Suitable for Instagram / LinkedIn post
+
+Output should look like a premium tech company marketing post
+`;
         }
     </script>
 @endsection

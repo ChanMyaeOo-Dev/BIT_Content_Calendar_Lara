@@ -24,21 +24,29 @@
     </div>
 </a> --}}
 
+<a href="{{ route('prompt_generator') }}" class="btn_nav {{ nav_active('prompt_generator') }}">
+    <div class="flex items-center justify-center gap-1">
+        <i class="fas fa-pencil-alt"></i>
+        <span class=" text-nowrap">
+            Prompt Generator
+        </span>
+    </div>
+</a>
+<a href="{{ route('image_prompt_generator') }}" class="btn_nav {{ nav_active('image_prompt_generator') }}">
+    <div class="flex items-center justify-center gap-1">
+        <i class="fas fa-image"></i>
+        <span class=" text-nowrap">
+            Image
+        </span>
+    </div>
+</a>
+
 
 <a href="{{ route('time_table') }}" class="btn_nav {{ nav_active('time_table') }}">
     <div class="flex items-center justify-center gap-1">
         <i class="fas fa-calendar-alt"></i>
         <span class=" text-nowrap">
             Time Table
-        </span>
-    </div>
-</a>
-
-<a href="{{ route('prompt_generator') }}" class="btn_nav {{ nav_active('prompt_generator') }}">
-    <div class="flex items-center justify-center gap-1">
-        <i class="fas fa-pencil-alt"></i>
-        <span class=" text-nowrap">
-            Prompt Generator
         </span>
     </div>
 </a>
