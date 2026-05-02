@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'My App')</title>
+    <title>@yield('title', 'Ko Chen | Digital Corner')</title>
     {{-- app icon --}}
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/images/logo_icon_3d.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/images/logo_icon_3d.png') }}">
@@ -28,7 +28,7 @@
                     </div>
                     {{-- <img src="{{ asset('assets/images/logo_icon_3d.png') }}" alt="logo" class="size-10 rounded-md"> --}}
                     <h1 class="text-lg font-bold font-sans">
-                        BIT Content <span class="text-rose-500">Management</span>
+                        Ko Chen | <span class="text-rose-500">Digital Corner</span>
                     </h1>
                 </div>
             </a>

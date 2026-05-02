@@ -1,6 +1,6 @@
 @extends('layout.app')
 
-@section('title', 'BIT Content Calendar')
+@section('title', 'Ko Chen | Digital Corner')
 
 @section('content')
     <div class="bg-neutral-950/30 backdrop-blur-2xl sticky top-16 pb-2 pt-6 mb-6">

@@ -1,5 +1,4 @@
 @extends('layout.app')
-@section('title', 'BIT Content Calendar')
 @section('content')
     <style>
         :root {
@@ -327,11 +326,11 @@
         function renderTabs() {
             const container = document.getElementById('day-tabs');
             container.innerHTML = scheduleData.weekly_schedule.map(dayObj => `
-                <button onclick="changeDay('${dayObj.day}')" 
+                <button onclick="changeDay('${dayObj.day}')"
                     id="tab-${dayObj.day}"
                     class="px-5 py-2 whitespace-nowrap rounded-lg text-sm font-bold transition-all
-                    ${dayObj.day === currentActiveDay 
-                        ? 'bg-rose-600 text-white shadow-lg shadow-rose-500/30' 
+                    ${dayObj.day === currentActiveDay
+                        ? 'bg-rose-600 text-white shadow-lg shadow-rose-500/30'
                         : 'bg-white dark:bg-neutral-900 hover:bg-neutral-100 dark:hover:bg-neutral-800 text-neutral-500 dark:text-neutral-400'}">
                     ${dayObj.day}
                 </button>

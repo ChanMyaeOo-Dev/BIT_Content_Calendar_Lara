@@ -1,16 +1,31 @@
 @extends('layout.app')
 
-@section('title', 'BIT Content Calendar')
-
 @section('content')
     <div class="bg-neutral-950/30 backdrop-blur-2xl sticky top-16 pb-2 pt-6 mb-6">
         <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div class=" grid grid-cols-1 md:grid-cols-2 gap-3">
+                <div class="bg-neutral-900 rounded-lg border border-neutral-800 flex flex-col mb-3">
+                    <div
+                        class="flex items-center justify-between bg-neutral-900 border-b border-b-neutral-800 border-t border-t-rose-500 rounded-t-md px-8 py-3">
+                        <p class="text-nowrap">Text</p>
+                    </div>
+                    <input type="text" id="question" class="text-neutral-300 m-8 leading-9 focus:outline-none" autofocus>
+                </div>
+                <div class="bg-neutral-900 rounded-lg border border-neutral-800 flex flex-col mb-3">
+                    <div
+                        class="flex items-center justify-between bg-neutral-900 border-b border-b-neutral-800 border-t border-t-rose-500 rounded-t-md px-8 py-3">
+                        <p class="text-nowrap">Color</p>
+                    </div>
+                    <input type="text" id="color" value="blue"
+                        class="text-neutral-300 m-8 leading-9 focus:outline-none">
+                </div>
+            </div>
             <div class="bg-neutral-900 rounded-lg border border-neutral-800 flex flex-col">
                 <div
                     class="flex items-center justify-between bg-neutral-900 border-b border-b-neutral-800 border-t border-t-rose-500 rounded-t-md px-8 py-3">
-                    <p class="text-nowrap">Question</p>
+                    <p class="text-nowrap">Character Style</p>
                 </div>
-                <textarea id="question" class="text-neutral-300 m-8 leading-9 focus:outline-none" rows="10" autofocus></textarea>
+                <textarea id="character_style" class="text-neutral-300 m-8 leading-9 focus:outline-none" rows="3" autofocus></textarea>
             </div>
             <div class="flex items-center justify-center gap-2">
                 <button type="button" class="btn_copy cursor-pointer mt-3 !bg-neutral-900">
@@ -59,7 +74,10 @@
 
             const btn = document.querySelector(".btn_copy");
             btn.addEventListener("click", async () => {
-                const copy_template = getFullText(document.getElementById('question').value);
+                const text = document.getElementById('question').value;
+                const character_style = document.getElementById('character_style').value;
+                const color = document.getElementById('color').value;
+                const copy_template = getFullText(text, character_style, color);
                 try {
                     await navigator.clipboard.writeText(copy_template);
                     btn.innerHTML = `
@@ -95,50 +113,79 @@
     </script>
 
     <script>
-        function getFullText(title) {
-            return `Create a modern, high-end social media graphic design in 16:9 aspect ratio.
-Style should be minimal, professional, and tech/corporate, inspired by SaaS, fintech, and startup branding.
+        function getFullText(title, character_style, color) {
+            const characterSection = character_style && character_style.trim() !== "" ?
+                `Include Pixar-style 3D character(s):
+${character_style}
+Natural interaction, no speech bubbles, no exaggerated gestures` :
+                `Character Scene (Auto-Generated):
+Do not require a predefined character description.
+Instead, intelligently interpret the main headline text (“${title}”) and generate a relevant visual scene.
+
+- The scene should visually represent the meaning, emotion, or context of the headline
+- Prefer tech, developer, or digital-work-related scenarios when applicable
+- Keep it minimal, professional, and aligned with SaaS branding
+- Use subtle, natural character poses (no exaggeration, no speech bubbles)
+
+Examples:
+- “Errors” → developer reviewing/debugging code with slight confusion
+- “Success” → calm completion moment, confident posture
+- “System Design” → planning or discussion scene`;
+
+            return `Create a premium, modern social media graphic in 16:9 aspect ratio, designed in a minimal, high-end SaaS/fintech style.
+
+Art Direction & Style:
+Clean, corporate, and polished visual identity inspired by modern startup branding. Emphasize simplicity, strong hierarchy, and a refined tech aesthetic. Avoid clutter completely.
 
 Background:
-Use a deep gradient background (dark blue, navy, or black base) with subtle glow lighting. Add a soft radial light or spotlight effect in the center. Include a very subtle grid or abstract pattern for depth.
+Use a deep gradient base (navy → dark ${color} → near-black).
+Add a soft radial glow or spotlight at the center for depth.
+Include a very subtle grid, noise, or abstract tech pattern (low opacity) to enhance dimension without distraction.
+Lighting should feel soft, cinematic, and slightly futuristic.
 
 Layout & Composition:
+Balanced, centered composition with clear visual hierarchy.
+Use generous padding and whitespace for a premium feel.
+Include a rounded rectangle frame or faint glowing border lines to contain the design.
+Incorporate subtle glassmorphism or UI card elements (blurred panels, soft transparency).
 
-Keep a clean and balanced layout with strong visual hierarchy
-Add a rounded rectangle frame or soft border lines around the content
-Use spacing generously (premium feel)
+Main Headline:
+Text: “${title}”
+Large, bold, modern sans-serif font.
+High contrast (white or soft light-${color}).
+Apply slight emphasis using weight variation or subtle gradient glow.
+No additional text except the page name.
 
-Main Text (Headline):
+Branding (Small):
+“Ko Chen | Digital Corner”
+Place subtly (top corner or bottom area), minimal and clean.
 
-Insert: ${title}
-Large, bold, sans-serif typography
-Use contrast (white or light color)
-Highlight key words with slightly different weight or color
+Character Scene:
+${characterSection}
+
+Character Styling:
+Smooth, slightly glossy skin (Pixar-quality rendering)
+Large, expressive eyes with realistic reflections
+Soft, cinematic lighting with gentle shadows
+Clean, modern clothing (tech/casual style)
 
 Design Details:
+Use soft shadows, glow accents, and layered depth
+Incorporate minimal UI-inspired elements (small cards, pills, indicators)
+Keep everything subtle and aligned with a premium tech product look
 
-Smooth gradients, soft shadows, subtle glow effects
-Modern UI-inspired elements (cards, pills, minimal icons)
-Clean and premium look (no clutter)
+Color System:
+Primary: deep ${color} / navy gradients
+Accent: soft ${color} glow / white highlights
+Optional: very light neon ${color} for emphasis
 
-Typography Style:
+Rendering Quality:
+Ultra-sharp, 4K resolution
+High-detail, professional rendering
+Crisp edges, smooth gradients, no noise or artifacts
 
-Use modern sans-serif fonts (clean, geometric)
-Strong hierarchy: headline > subtext > small labels
-
-Color Style:
-
-Primary: deep blue / dark gradient
-Accent: light blue or white glow
-
-Quality:
-
-Ultra clean, sharp, high resolution
-Professional branding style
-Suitable for Instagram / LinkedIn post
-
-Output should look like a premium tech company marketing post
-`;
+Final Output:
+Should look like a high-end tech company marketing visual, suitable for LinkedIn or Instagram, with a clean, futuristic, and premium SaaS aesthetic.`;
         }
     </script>
 @endsection

@@ -1,7 +1,5 @@
 @extends('layout.app')
 
-@section('title', 'BIT Content Calendar')
-
 @section('content')
     <div class="bg-neutral-950/30 backdrop-blur-2xl sticky top-16 pb-2 pt-6 mb-6">
         <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
