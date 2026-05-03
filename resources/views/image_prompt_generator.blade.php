@@ -27,7 +27,7 @@
                 </div>
                 <textarea id="character_style" class="text-neutral-300 m-8 leading-9 focus:outline-none" rows="3" autofocus></textarea>
             </div>
-            <div class="flex items-center justify-center gap-2">
+            <div class="flex items-center justify-center gap-2 mb-4">
                 <button type="button" class="btn_copy cursor-pointer mt-3 !bg-neutral-900">
                     <div class="flex items-center justify-center gap-1">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -55,6 +55,15 @@
                     </div>
                 </a>
             </div>
+
+            <div class="p-4 rounded-sm border border-neutral-800">
+                <p class="text-neutral-500 italic selection:bg-neutral-500 selection:text-neutral-100">
+                    Include two Pixar-style 3D characters: One junior developer (confused/thoughtful expression, neutral
+                    posture—not exaggerated) One senior developer (calm, confident, slightly guiding presence) Natural
+                    interaction, no speech bubbles, no exaggerated gestures
+                </p>
+            </div>
+
         </div>
     </div>
 
