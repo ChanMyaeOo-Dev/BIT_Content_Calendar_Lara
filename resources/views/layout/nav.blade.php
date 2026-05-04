@@ -32,7 +32,7 @@
         </span>
     </div>
 </a>
-<a href="{{ route('image_prompt_generator') }}" class="btn_nav {{ nav_active('image_prompt_generator') }}">
+<a href="{{ route('image_styles') }}" class="btn_nav {{ nav_active('image_styles') }}">
     <div class="flex items-center justify-center gap-1">
         <i class="fas fa-image"></i>
         <span class=" text-nowrap">

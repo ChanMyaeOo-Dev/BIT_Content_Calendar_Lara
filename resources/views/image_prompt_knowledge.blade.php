@@ -141,7 +141,7 @@ Examples:
 - “Success” → calm completion moment, confident posture
 - “System Design” → planning or discussion scene`;
 
-            return `Create a premium, modern social media graphic in 16:9 aspect ratio, designed in a minimal, high-end SaaS/fintech style.
+            return `Create a premium, modern social media graphic in 1:1 square aspect ratio, designed in a minimal, high-end SaaS/fintech style.
 
 Art Direction & Style:
 Clean, corporate, and polished visual identity inspired by modern startup branding. Emphasize simplicity, strong hierarchy, and a refined tech aesthetic. Avoid clutter completely.
