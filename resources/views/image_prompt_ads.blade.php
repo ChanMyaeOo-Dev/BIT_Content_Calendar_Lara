@@ -22,7 +22,7 @@
                         class="text-neutral-300 m-8 leading-9 focus:outline-none">
                 </div>
 
-                <div class="bg-neutral-900 rounded-lg border border-neutral-800 flex flex-col mb-3">
+                <div class="bg-neutral-900 rounded-lg border border-neutral-800 hidden flex-col mb-3">
                     <div
                         class="flex items-center justify-between bg-neutral-900 border-b border-b-neutral-800 border-t border-t-rose-500 rounded-t-md px-8 py-3">
                         <p class="text-nowrap">Sub Title</p>
@@ -117,7 +117,6 @@ Create a premium, modern social media marketing graphic in a 1:1 square aspect r
 
 INPUT CONTENT:
 Main Title: “${headline}”
-Subtitle: “${sub_title}”
 Course Price: “${course_price}”
 Tech Stack: “${tech_stack}”
 Brand Name: “Digital Corner”
@@ -140,17 +139,27 @@ If crowded, remove elements instead of reducing spacing.
 
 ---
 
-LAYOUT STRUCTURE:
+Background:
+Use a deep gradient base (deep dark → dark ${color} → near-black).
+Add a soft radial glow or spotlight at the center for depth.
+Include a very subtle grid, noise, or abstract tech pattern (low opacity) to enhance dimension without distraction.
+Lighting should feel soft, cinematic, and slightly futuristic.
+
+Layout & Composition:
 Use a clean grid-based layout (prefer left-aligned or slightly asymmetric).
 Avoid cramped or overly centered layouts.
 Divide into zones:
+Balanced, centered composition with clear visual hierarchy.
+Use generous padding and whitespace for a premium feel.
+Include a rounded rectangle frame or faint glowing border lines to contain the design.
+Incorporate subtle glassmorphism or UI card elements (blurred panels, soft transparency).
 
 * Text zone
 * Visual zone
 * Supporting info zone
 
 Visual flow:
-Main Title → Visual → Subtitle → Tech Stack → Price (No need price icon) → Branding
+Main Title → Visual → Tech Stack → Price (No need price icon) → Branding
 
 ---
 
@@ -228,7 +237,6 @@ Present the tech stack in one clean style (choose ONE):
 
 Rules:
 
-* Keep smaller than subtitle
 * Maintain spacing
 * Do not dominate layout
 * Avoid colorful clutter
@@ -244,7 +252,7 @@ Maintain strong negative space
 ---
 
 BACKGROUND:
-Deep gradient (navy → near-black)
+Deep gradient (deep dark → near-black)
 Soft ${color} glow
 Subtle radial lighting
 Optional very light texture
@@ -256,9 +264,6 @@ TEXT HIERARCHY:
 
 Main Title:
 Designed with hierarchy (not uniform)
-
-Subtitle:
-Smaller, supportive
 
 Course Price:
 Highlighted (badge/pill), separated clearly
@@ -293,7 +298,7 @@ Premium lighting
 ---
 
 COLOR SYSTEM:
-Primary: navy / near-black
+Primary: deep dark / near-black
 Accent: soft ${color}
 Text: white
 No extra strong colors
@@ -316,6 +321,7 @@ A clean, spacious, high-end SaaS-style course advertisement with excellent typog
 ---
 
 FINAL INSTRUCTION:
+No need to add Subtitle.
 Design with restraint.
 Prioritize spacing, hierarchy, and clarity.
 The headline must be visually structured with clear emphasis — like a professionally designed typographic layout, not a plain text block.`;
